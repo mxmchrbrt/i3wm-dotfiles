@@ -1,19 +1,22 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
-(load-theme 'adwaita-dark t)
+
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(adwaita-dark-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ("gnu"   . "https://elpa.gnu.org/packages/")
+        ("org"   . "https://orgmode.org/elpa/")))
+(unless package--initialized (package-initialize))
+
+;; Ensure package list is present
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+;; Refresh if package not found locally
+(unless (package-installed-p 'adwaita-theme)
+  (package-refresh-contents)
+  (package-install 'adwaita-theme))
+
+(when (package-installed-p 'adwaita-theme)
+  (load-theme 'adwaita-dark t))
