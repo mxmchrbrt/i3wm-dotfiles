@@ -181,9 +181,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status --config ~/dotfiles/.config/i3/status.conf
-}
 
 ## Custom
 
@@ -206,4 +203,5 @@ bindsym XF86MicMute exec --no-startup-id "pactl set-source-mute @DEFAULT_SOURCE@
 bindsym XF86MonBrightnessUp exec "brightnessctl set 5%+"
 bindsym XF86MonBrightnessDown exec "brightnessctl set 5%-"
 exec picom --config /home/user/.config/picom/picom.conf
-exec xfce4-power-manager 
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
