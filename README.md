@@ -16,17 +16,22 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.emacs.d
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/picom
+mkdir -p ~/.config/polybar
 touch ~/.config/picom/picom.conf
 cp -rf ~/.config/i3/config ~/.config/i3/config.bak
+cp -rf ~/.config/polybar/config.ini ~/.config/i3/config.bak
+cp -rf ~/dotfiles/.config/polybar/launch.sh ~/.config/polybar
 cp -rf ~/.vimrc ~/.vimrc.bak
 cp -rf ~/.emacs.d/init.el ~/.emacs.d/init.el.bak
 cp -rf ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml/bak
 rm -rf ~/.config/alacritty/alacritty.toml
 rm -rf ~/.emacs.d/init.el
 rm -rf ~/.config/i3/config
+rm -rf ~/.config/polybar/config.ini
 rm -rf ~/.vimrc
 ln -s ~/dotfiles/.config/i3/config ~/.config/i3/config
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
 ln -s ~/dotfiles/.config/emacs/init.el ~/.emacs.d/init.el
 ln -s ~/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -s ~/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.conf
