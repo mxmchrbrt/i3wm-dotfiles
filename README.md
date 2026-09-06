@@ -2,7 +2,7 @@
 
 ``` bash
 sudo apt purge picom
-sudo apt install git tlp vim emacs net-tools pavucontrol gcc gdb alacritty i3 feh mpv flameshot network-manager network-manager-applet budgie-network-manager-applet ranger cmus libreoffice kdenlive obs-studio
+sudo apt install polybar git tlp vim emacs net-tools pavucontrol gcc gdb alacritty i3 feh mpv flameshot network-manager network-manager-applet budgie-network-manager-applet ranger cmus libreoffice kdenlive obs-studio
 sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev
 cd /tmp
 git clone https://github.com/yshui/picom
@@ -35,4 +35,9 @@ ln -s ~/dotfiles/.config/polybar/config.ini ~/.config/polybar/config.ini
 ln -s ~/dotfiles/.config/emacs/init.el ~/.emacs.d/init.el
 ln -s ~/dotfiles/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -s ~/dotfiles/.config/picom/picom.conf ~/.config/picom/picom.conf
+cd /tmp
+wget https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
+unzip JetBrainsMono-2.304.zip
+sudo cp -rf fonts/* /usr/share/fonts
+fc-cache -f -v
 ```
