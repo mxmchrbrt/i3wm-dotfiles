@@ -205,4 +205,4 @@ exec picom --config /home/user/.config/picom/picom.conf
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-exec xfce-power-manager &
+exec xfce4-power-manager &
